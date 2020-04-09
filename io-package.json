@@ -69,6 +69,7 @@
         "type": "multimedia",
         "enabled": true,
         "messagebox": true,
+        "license": "MIT",
         "authors": [
             {
                 "name": "soef",
