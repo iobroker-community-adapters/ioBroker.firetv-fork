@@ -3,8 +3,14 @@
 var soef = require(`${__dirname}/lib/dontBeSoSoef`),
     adb = require('adbkit'),
     path = require('path'),
-    Client = require('./node_modules/adbkit/lib/adb/client'),
     Mdns = require('mdns-discovery');
+
+let Client;
+try {
+    Client = require('./node_modules/adbkit/lib/adb/client');
+} catch (e) {
+    Client = require('../adbkit/lib/adb/client');
+}
 
 soef.extendAll();
 
