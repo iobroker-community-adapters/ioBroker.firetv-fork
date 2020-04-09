@@ -1,7 +1,7 @@
 {
     "common": {
-        "name": "firetv-community",
-        "version": "0.0.33",
+        "name": "firetv",
+        "version": "1.0.0",
         "title": "Fire TV",
         "desc":                     {
             "en": "control Amazon Fire TV",
@@ -10,6 +10,18 @@
         },
         "platform": "Javascript/Node.js",
         "news": {
+            "1.0.0": {
+                "en": "compatibility for js-controller 3",
+                "de": "Kompatibilität für js-controller 3",
+                "ru": "совместимость для js-controller 3",
+                "pt": "compatibilidade para js-controller 3",
+                "nl": "compatibiliteit voor js-controller 3",
+                "fr": "compatibilité pour js-controller 3",
+                "it": "compatibilità per js-controller 3",
+                "es": "compatibilidad para js-controller 3",
+                "pl": "kompatybilność z js-kontrolerem 3",
+                "zh-cn": "js-controller 3的兼容性"
+            },
             "0.0.33": {
                 "en": "Update utils.js and usage, CI Testing and deps (Apollon77)",
                 "de": "utils.js und Benutzung erneuert, CI Testing (Apollon77)"
@@ -51,8 +63,8 @@
         ],
         "mode": "daemon",
         "icon": "firetv.png",
-        "extIcon": "https://raw.githubusercontent.com/soef/iobroker.firetv/master/admin/firetv.png",
-        "readme": "https://github.com/soef/iobroker.firetv/blob/master/README.md",
+        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.firetv/master/admin/firetv.png",
+        "readme": "https://github.com/iobroker-community-adapters/iobroker.firetv/blob/master/README.md",
         "loglevel": "info",
         "type": "multimedia",
         "enabled": true,

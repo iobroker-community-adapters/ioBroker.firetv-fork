@@ -1,6 +1,6 @@
 {
-  "name": "iobroker.firetv-community",
-  "version": "0.0.33",
+  "name": "iobroker.firetv",
+  "version": "1.0.0",
   "description": "ioBroker Fire-TV Adapter",
   "author": {
     "name": "soef",
@@ -15,7 +15,7 @@
       "email": "soef@gmx.net"
     }
   ],
-  "homepage": "https://github.com/soef/iobroker.firetv",
+  "homepage": "https://github.com/iobroker-community-adapters/iobroker.firetv",
   "license": "MIT",
   "keywords": [
     "fire-tv",
@@ -25,15 +25,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/soef/iobroker.firetv"
+    "url": "https://github.com/iobroker-community-adapters/iobroker.firetv"
   },
   "dependencies": {
     "adbkit": "^2.7.0",
     "bluebird": "^3.4.7",
     "mdns-discovery": "^0.1.9",
     "path": "^0.12.7",
-    "soef": "^0.1.39",
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^1.0.3",
+    "sprintf-js": "^1.0.3",
+    "array-ext": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "^4.1.0",
@@ -44,7 +45,7 @@
     "test": "node node_modules/mocha/bin/mocha --exit"
   },
   "bugs": {
-    "url": "https://github.com/soef/iobroker.firetv/issues"
+    "url": "https://github.com/iobroker-community-adapters/iobroker.firetv/issues"
   },
   "readmeFilename": "README.md"
 }

@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var soef = require('soef'),
+var soef = require(`${__dirname}/lib/dontBeSoSoef`),
     adb = require('adbkit'),
     path = require('path'),
     Client = require('./node_modules/adbkit/lib/adb/client'),
@@ -101,9 +101,9 @@ var usedStateNames = {
     shell:              { n: 'shell',       val: '',    common: { desc: 'send an adb shell command'}},
     text:               { n: 'text',        val: '',    common: { desc: 'send "text" to the device'}},
     sendevent:          { n: 'sendevent',   val: '',    common: { } },
-    
+
     //framebuffer:        { n: 'framebuffer', val: '',    common: { } },
-    
+
     enter:              { n: 'keys.enter',  val: false, common: { min: false, max: true, code: adb.Keycode.KEYCODE_ENTER }},
     left:               { n: 'keys.left',   val: false, common: { min: false, max: true, code: adb.Keycode.KEYCODE_DPAD_LEFT }},
     right:              { n: 'keys.right',  val: false, common: { min: false, max: true, code: adb.Keycode.KEYCODE_DPAD_RIGHT }},
@@ -174,7 +174,7 @@ function closeAllFireTVs() {
         fireTVs[i].close();
         delete fireTVs[i];
     }
-    
+
 }
 
 function onUnload(callback) {
@@ -191,7 +191,7 @@ function new_g_client() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function trackDevices() {
-    
+
     function set(device, val) {
         if (!device || !device.id) return;
         var ar = device.id.split(':');
@@ -247,13 +247,13 @@ FireTV.prototype.startClient = function(cb) {
             adapter.log.debug('Connected to ' + self.id + ' id=' + id + ((!err && state) ? ' state=' + state : ""));
             self.updateState(state);
         });
-    
+
         // self.client.getProperties(id, function(err, properties) {
         // });
         // self.client.getPackages(id, function(err, packages) {
         //     if (err || !packages) return;
         // });
-    
+
         self.client.version(function(err, version) {
             self.getAndroidVersion(function(androidVersion) {
                 self.getAPILevel(function (apiLevel) {
@@ -395,7 +395,7 @@ function getKeyValue(key) {
     var val = ~~key;
     if (val) return val;
     key = key.replace(/"|'|\s/g, '').toUpperCase();
-    
+
     if ((val = adb.Keycode[key]) !== undefined) return val;
     if ((val = adb.Keycode['KEYCODE_DPAD_' + key]) !== undefined) return val;
     val = adb.Keycode['KEYCODE_' + key];
@@ -417,7 +417,7 @@ function buildInputEvent(key, longpress) {
         //"sendevent /dev/input/event" + eventNo + " 4 4 0007004f" + SEP +
         "sendevent /dev/input/event" + eventNo + " 1 " + key + " 0" + SEP +
         "sendevent /dev/input/event" + eventNo + " 0 0 0";
-    
+
     return cmd;
 }
 
@@ -426,14 +426,14 @@ var reInputKey = /^[\"|\'](.*)[\"|\']$/;
 
 FireTV.prototype.inputKeyevent = function (val) {
     if (~~val !== 0) return this.shell("input keyevent " + val);
-    
+
     // (4000, 'DOWN', 1000, 'DOWN', 100, 'DOWN', 'RIGHT', 'RIGHT', 'RIGHT', 'RIGHT', 'ENTER', 500, 'DOWN');
     var ar = val.split(',');
     if (ar.length <= 1) ar = val.split(' ');
     var number, i = 0, delay = 0;
     var self = this;
     //self.stopKeyevents
-    
+
     function doIt() {
         if (i < ar.length && !self.stopKeyevents) {
             var v = ar[i++].trim();
@@ -445,7 +445,7 @@ FireTV.prototype.inputKeyevent = function (val) {
                 //adapter.log.debug('sendKeys: ' + v + ' (' + keys[v] + ')');
                 var key;
                 if (reInputKey.test(v)) {
-                    
+
                     key = "input text " + normalizeInputText(v.replace(reInputKey, '$1'));
                 } else if (v === 'callback') {
                     self.dev.setImmediately('result', 'callback');
@@ -617,8 +617,8 @@ function normalizeConfig() {
         });
     }
  }
- 
- 
+
+
 function startFireTVs(cb) {
     var i = 0;
     function doIt() {
@@ -657,17 +657,17 @@ function prepareDevices(cb) {
 
 
 function main() {
-    
+
     normalizeConfig();
     prepareDevices();
-    
+
     soef.deleteOrphanedDevices('ip', adapter.config.devices);
     checkIP(function () {
         startFireTVs(function () {
             trackDevices();
         })
     });
-    
+
     adapter.subscribeStates('*');
     //adapter.subscribeObjects('*');
 }
