@@ -34,7 +34,8 @@
     "path": "^0.12.7",
     "@iobroker/adapter-core": "^1.0.3",
     "sprintf-js": "^1.0.3",
-    "array-ext": "^0.1.0"
+    "array-ext": "^0.1.0",
+    "snyk": "^1.305.1"
   },
   "devDependencies": {
     "mocha": "^4.1.0",
@@ -42,10 +43,13 @@
   },
   "main": "firetv.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
+    "test": "node node_modules/mocha/bin/mocha --exit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/iobroker.firetv/issues"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "snyk": true
 }
