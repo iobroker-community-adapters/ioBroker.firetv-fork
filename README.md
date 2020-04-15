@@ -8,7 +8,7 @@
 
 <!--
 [![NPM version](https://badge.fury.io/js/iobroker.firetv.svg)](https://www.npmjs.com/package/iobroker.firetv)
-[![Build Status](https://secure.travis-ci.org/soef/iobroker.firetv.svg?branch=master)](https://travis-ci.org/soef/iobroker.firetv)
+[![Build Status](https://secure.travis-ci.org/soef/iobroker.firetv.svg?branch=master)](https://travis-ci.org/soef/iobroker.firetv) [![Greenkeeper badge](https://badges.greenkeeper.io/iobroker-community-adapters/ioBroker.firetv.svg)](https://greenkeeper.io/)
 -->
 
 With this adapter you can control some funtions of your Fire TV or Fire TV Stick.
