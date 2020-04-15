@@ -30,14 +30,14 @@
   "dependencies": {
     "adbkit": "^2.7.0",
     "bluebird": "^3.4.7",
-    "mdns-discovery": "^0.1.9",
+    "mdns-discovery": "^0.2.6",
     "path": "^0.12.7",
-    "@iobroker/adapter-core": "^1.0.3",
+    "@iobroker/adapter-core": "^2.3.0",
     "sprintf-js": "^1.0.3",
     "array-ext": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "^4.1.0",
+    "mocha": "^7.1.1",
     "chai": "^4.1.2"
   },
   "main": "firetv.js",
