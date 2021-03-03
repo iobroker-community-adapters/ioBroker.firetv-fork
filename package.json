@@ -30,7 +30,7 @@
   "dependencies": {
     "adbkit": "^2.7.0",
     "bluebird": "^3.4.7",
-    "mdns-discovery": "^0.1.9",
+    "mdns-discovery": "^0.2.6",
     "path": "^0.12.7",
     "@iobroker/adapter-core": "^2.4.0",
     "sprintf-js": "^1.0.3",
