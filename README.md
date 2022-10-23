@@ -33,6 +33,10 @@ Search on google (Minimal ADB and Fastboot) for the latest download link.
 Alternatively, you can use *adbLink* 
 
 ## Changelog
+
+### __WORK IN PROGRESS__
+* (Grothesk242) make compatible with Node.js 18+
+
 ### 1.0.0 (2020-04-09)
 * (foxriver76) compatibility for js-c 3
 

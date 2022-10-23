@@ -28,21 +28,27 @@
     "url": "https://github.com/iobroker-community-adapters/iobroker.firetv"
   },
   "dependencies": {
-    "adbkit": "^2.7.0",
-    "bluebird": "^3.4.7",
+    "adbkit": "^2.11.1",
+    "bluebird": "^3.7.2",
     "mdns-discovery": "^0.2.6",
     "path": "^0.12.7",
-    "@iobroker/adapter-core": "^2.4.0",
-    "sprintf-js": "^1.0.3",
-    "array-ext": "^0.1.0"
+    "@iobroker/adapter-core": "^2.6.7",
+    "sprintf-js": "^1.1.2",
+    "array-ext": "^0.1.5"
   },
   "devDependencies": {
-    "mocha": "^9.0.3",
-    "chai": "^4.1.2"
+    "@alcalzone/release-script": "^3.5.9",
+    "@alcalzone/release-script-plugin-iobroker": "^3.5.9",
+    "@alcalzone/release-script-plugin-license": "^3.5.9",
+    "@iobroker/adapter-dev": "^1.2.0",
+    "mocha": "^10.1.0",
+    "chai": "^4.3.6"
   },
   "main": "firetv.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
+    "test": "node node_modules/mocha/bin/mocha --exit",
+    "translate": "translate-adapter",
+    "release": "release-script"
   },
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/iobroker.firetv/issues"
