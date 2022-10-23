@@ -191,7 +191,7 @@ function onUnload(callback) {
 
 function new_g_client() {
     if (g_client) return;
-    g_client = adb.createClient({bin: adapter.config.adbPath, host:'127.0.0.1'});
+    g_client = adb.createClient({bin: adapter.config.adbPath, host: '127.0.0.1'});
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
