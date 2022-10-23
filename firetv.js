@@ -191,7 +191,7 @@ function onUnload(callback) {
 
 function new_g_client() {
     if (g_client) return;
-    g_client = adb.createClient({bin: adapter.config.adbPath});
+    g_client = adb.createClient({bin: adapter.config.adbPath, host: '127.0.0.1'});
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -242,7 +242,7 @@ var FireTV = function (entry) {
 
 FireTV.prototype.startClient = function(cb) {
     var self = this;
-    this.client = adb.createClient({ bin: adapter.config.adbPath });
+    this.client = adb.createClient({ bin: adapter.config.adbPath, host: '127.0.0.1'});
     this.client.connect(this.id, 5555, function(err, id) {
         if (err || !id) {
             adapter.log.error('can not connect to ' + self.id + ' Error=' + err.message);
