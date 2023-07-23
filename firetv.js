@@ -3,6 +3,7 @@
 var soef = require(`${__dirname}/lib/dontBeSoSoef`),
     adb = require('adbkit'),
     path = require('path'),
+    os = require('os'),
     Mdns = require('mdns-discovery');
 
 let Client;
@@ -20,7 +21,7 @@ Client.prototype.shellEx = function(id, command, cb) {
         if (err || !stream) return cb & cb(err, 0);
         adb.util.readAll(stream, function (err, output) {
             if (err || !stream) return cb && cb(err);
-            var ar = output.toString().split('\r\n');
+            var ar = output.toString().split(os.EOL);
             ar.length--;
             for (var i=ar.length-1; i > ar.length-10; i++) {
                 adapter.log.debug(ar[i]);
@@ -259,7 +260,6 @@ FireTV.prototype.startClient = function(cb) {
         // self.client.getPackages(id, function(err, packages) {
         //     if (err || !packages) return;
         // });
-
         self.client.version(function(err, version) {
             self.getAndroidVersion(function(androidVersion) {
                 self.getAPILevel(function (apiLevel) {
@@ -318,7 +318,7 @@ FireTV.prototype.handleCallback = function (err, stream, cb) {
     var self = this;
     adb.util.readAll(stream, function(err, output) {
         if (!err && output) {
-            var ar = output.toString().split('\r\n');
+            var ar = output.toString().split(os.EOL);
             ar.length--;
             // for (var i = Math.max(0, ar.length-10); i < ar.length; i++) {
             //     var line = ar[i];
@@ -353,7 +353,7 @@ FireTV.prototype.shell = function (command, cb) {
 function lines2Object(lines) {
     var o = {};
     if (!lines) return o;
-    if (typeof lines === 'string') lines = lines.split('\r\n');
+    if (typeof lines === 'string') lines = lines.split(os.EOL);
     lines.forEach(function(line) {
         line = line.trim().replace(/ |:/g, '_');
         var ar = line.split('=');
