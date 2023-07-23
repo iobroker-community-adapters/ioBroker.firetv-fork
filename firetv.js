@@ -377,22 +377,8 @@ FireTV.prototype.updateState = function (state) {
 
 
 FireTV.prototype.getPowerState = function (cb) {
-    this.shell('dumpsys power', function (ar) {
-        // var value = ar.join('\r');
-        // var RE_KEYVAL = /^\s*(\S*)=(\S)\r?$/gm;
-        // var properties = {};
-        // var match;
-        // value = value.substr(52);
-        // while (match = RE_KEYVAL.exec(value)) {
-        //     properties[match[1]] = match[2];
-        // }
-
-        var power = lines2Object(ar);
-        var on = power.Display_Power__state;
-        //var i = power.mScreenOn;
-        // power.mSystemReady
-        // power.mDisplayReady;
-        cb && cb(on === 'ON');
+    this.shell1(`dumpsys power | grep  -E \'Display Power: state=ON\' | wc -l`, function (ar) {
+        cb && cb(ar > 0);
     });
 };
 
