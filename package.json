@@ -32,7 +32,7 @@
     "bluebird": "^3.7.2",
     "mdns-discovery": "^0.2.6",
     "path": "^0.12.7",
-    "@iobroker/adapter-core": "^2.6.8",
+    "@iobroker/adapter-core": "^3.0.3",
     "sprintf-js": "^1.1.2",
     "array-ext": "^0.1.5"
   },
