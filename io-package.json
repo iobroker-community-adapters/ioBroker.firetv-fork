@@ -1,186 +1,160 @@
 {
-    "common": {
-        "name": "firetv",
-        "version": "1.0.0",
-        "title": "Fire TV",
-        "titleLang": {
-            "en": "Fire TV",
-            "de": "Fire TV",
-            "ru": "Пожарное ТВ",
-            "pt": "Fire TV",
-            "nl": "Fire TV",
-            "fr": "Fire TV",
-            "it": "Fire TV",
-            "es": "Fire TV",
-            "pl": "Fire TV",
-            "uk": "Пожежне телебачення",
-            "zh-cn": "消防电视"
-        },
-        "desc": {
-            "en": "control Amazon Fire TV",
-            "de": "steuert Amazon Fire TV",
-            "ru": "Amazon Fire TV",
-            "pt": "controlar Amazon Fire TV",
-            "nl": "Amazon Fire TV bedienen",
-            "fr": "contrôler Amazon Fire TV",
-            "it": "controlla Amazon Fire TV",
-            "es": "controlar Amazon Fire TV",
-            "pl": "sterować Amazon Fire TV",
-            "uk": "керуйте Amazon Fire TV",
-            "zh-cn": "控制亚马逊消防电视"
-        },
-        "platform": "Javascript/Node.js",
-        "news": {
-            "1.0.0": {
-                "en": "compatibility for js-controller 3",
-                "de": "Kompatibilität für js-controller 3",
-                "ru": "совместимость для js-controller 3",
-                "pt": "compatibilidade para js-controller 3",
-                "nl": "compatibiliteit voor js-controller 3",
-                "fr": "compatibilité pour js-controller 3",
-                "it": "compatibilità per js-controller 3",
-                "es": "compatibilidad para js-controller 3",
-                "pl": "kompatybilność z js-kontrolerem 3",
-                "zh-cn": "js-controller 3的兼容性",
-                "uk": "сумісність для js-контролера 3"
-            },
-            "0.0.33": {
-                "en": "Update utils.js and usage, CI Testing and deps (Apollon77)",
-                "de": "utils.js und Benutzung erneuert, CI Testing (Apollon77)",
-                "ru": "Обновите utils.js и использование, тестирование CI и deps (Apollon77)",
-                "pt": "Atualize utils.js e uso, teste de CI e deps (Apollon77)",
-                "nl": "Update utils.js en gebruik, CI-testen en deps (Apollon77)",
-                "fr": "Mise à jour utils.js et utilisation, CI Testing et deps (Apollon77)",
-                "it": "Aggiorna utils.js e utilizzo, test CI e deps (Apollon77)",
-                "es": "Actualice utils.js y uso, pruebas de CI y dependencias (Apollon77)",
-                "pl": "Zaktualizuj utils.js i wykorzystanie, CI Testing i deps (Apollon77)",
-                "uk": "Оновлення utils.js і використання, CI Testing і deps (Apollon77)",
-                "zh-cn": "更新 utils.js 和用法、CI 测试和 deps (Apollon77)"
-            },
-            "0.0.32": {
-                "en": "update basic package-file testing (Apollon77)",
-                "de": "Erweiterung der Tests (Apollon77)",
-                "ru": "обновить базовое тестирование файла пакета (Apollon77)",
-                "pt": "atualizar o teste básico de arquivo de pacote (Apollon77)",
-                "nl": "update basispakketbestand testen (Apollon77)",
-                "fr": "mise à jour des tests de base du fichier de package (Apollon77)",
-                "it": "aggiornare il test di base del file di pacchetto (Apollon77)",
-                "es": "actualizar las pruebas básicas de archivos de paquetes (Apollon77)",
-                "pl": "aktualizacja podstawowego testowania plików pakietów (Apollon77)",
-                "uk": "оновити тестування основного пакетного файлу (Apollon77)",
-                "zh-cn": "更新基本包文件测试（Apollon77）"
-            },
-            "0.0.31": {
-                "en": "node 0.12 removed from testing",
-                "de": "node 0.12 auf testing entfernt",
-                "ru": "узел 0.12 снят с тестирования",
-                "pt": "nó 0.12 removido do teste",
-                "nl": "node 0.12 verwijderd uit testen",
-                "fr": "nœud 0.12 supprimé des tests",
-                "it": "nodo 0.12 rimosso dal test",
-                "es": "nodo 0.12 eliminado de las pruebas",
-                "pl": "węzeł 0.12 usunięty z testowania",
-                "uk": "вузол 0.12 видалено з тестування",
-                "zh-cn": "从测试中删除节点 0.12"
-            },
-            "0.0.30": {
-                "en": "Enhance CI testing",
-                "de": "CI testing erweitert",
-                "ru": "Улучшить тестирование CI",
-                "pt": "Melhore o teste de CI",
-                "nl": "CI-testen verbeteren",
-                "fr": "Améliorez les tests CI",
-                "it": "Migliora i test CI",
-                "es": "Mejore las pruebas de IC",
-                "pl": "Ulepsz testowanie CI",
-                "uk": "Покращте тестування CI",
-                "zh-cn": "增强 CI 测试"
-            },
-            "0.0.29": {
-                "en": "changed adapter type to media",
-                "de": "Adapter type nach media geändert",
-                "ru": "изменен тип адаптера на медиа",
-                "pt": "mudou o tipo de adaptador para mídia",
-                "nl": "adaptertype gewijzigd in media",
-                "fr": "changé le type d'adaptateur en média",
-                "it": "modificato il tipo di adattatore in supporto",
-                "es": "cambió el tipo de adaptador a medios",
-                "pl": "zmieniono typ adaptera na media",
-                "uk": "змінений тип адаптера на носій",
-                "zh-cn": "将适配器类型更改为媒体"
-            },
-            "0.0.27": {
-                "en": "Readme extended",
-                "de": "Readme erweitert",
-                "ru": "Расширенный файл ознакомительных сведений",
-                "pt": "Leiame estendido",
-                "nl": "Leesmij uitgebreid",
-                "fr": "Lisez-moi étendu",
-                "it": "Leggimi esteso",
-                "es": "Léame extendido",
-                "pl": "Rozszerzony plik Readme",
-                "uk": "Readme розширено",
-                "zh-cn": "自述文件扩展"
-            },
-            "0.0.26": {
-                "en": "fix text input",
-                "de": "Texteingabe gefixed",
-                "ru": "исправить ввод текста",
-                "pt": "corrigir entrada de texto",
-                "nl": "tekstinvoer corrigeren",
-                "fr": "corriger la saisie de texte",
-                "it": "correggere l'immissione di testo",
-                "es": "arreglar la entrada de texto",
-                "pl": "popraw wprowadzanie tekstu",
-                "uk": "виправити введення тексту",
-                "zh-cn": "修复文本输入"
-            },
-            "0.0.21": {
-                "en": "send key codes by an array with delays",
-                "de": "Versenden von key codes in einem Array mit delays",
-                "ru": "отправлять коды клавиш массивом с задержками",
-                "pt": "enviar códigos-chave por uma matriz com atrasos",
-                "nl": "stuur sleutelcodes door een array met vertragingen",
-                "fr": "envoyer des codes clés par un tableau avec des retards",
-                "it": "inviare codici chiave da un array con ritardi",
-                "es": "enviar códigos clave por una matriz con retrasos",
-                "pl": "wyślij kody kluczy przez tablicę z opóźnieniami",
-                "uk": "надсилати коди ключів масивом із затримками",
-                "zh-cn": "通过延迟数组发送键码"
-            }
-        },
-        "keywords": [
-            "firetv",
-            "fire tv",
-            "fire-tv",
-            "amazon fire tv"
-        ],
-        "mode": "daemon",
-        "icon": "firetv.png",
-        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.firetv/master/admin/firetv.png",
-        "readme": "https://github.com/iobroker-community-adapters/iobroker.firetv/blob/master/README.md",
-        "loglevel": "info",
-        "type": "multimedia",
-        "enabled": true,
-        "messagebox": true,
-        "license": "MIT",
-        "authors": [
-            {
-                "name": "soef",
-                "email": "soef@gmx.net"
-            }
-        ],
-        "dependencies": [
-            {
-                "js-controller": ">= 3.0.0"
-            }
-        ],
-        "tier": 2,
-        "dataSource": "poll",
-        "connectionType": "local"
+  "common": {
+    "name": "firetv",
+    "version": "2.0.0",
+    "title": "Fire TV",
+    "titleLang": {
+      "en": "Fire TV",
+      "de": "Fire TV",
+      "ru": "Пожарное ТВ",
+      "pt": "Fire TV",
+      "nl": "Fire TV",
+      "fr": "Fire TV",
+      "it": "Fire TV",
+      "es": "Fire TV",
+      "pl": "Fire TV",
+      "uk": "Пожежне телебачення",
+      "zh-cn": "消防电视"
     },
-    "native": {
-        "devices": []
+    "desc": {
+      "en": "control Amazon Fire TV",
+      "de": "steuert Amazon Fire TV",
+      "ru": "Amazon Fire TV",
+      "pt": "controlar Amazon Fire TV",
+      "nl": "Amazon Fire TV bedienen",
+      "fr": "contrôler Amazon Fire TV",
+      "it": "controlla Amazon Fire TV",
+      "es": "controlar Amazon Fire TV",
+      "pl": "sterować Amazon Fire TV",
+      "uk": "керуйте Amazon Fire TV",
+      "zh-cn": "控制亚马逊消防电视"
     },
-    "objects": []
+    "platform": "Javascript/Node.js",
+    "news": {
+      "2.0.0": {
+        "en": "make compatible with Node.js 18+\na minimum node.js version is 16",
+        "de": "kompatibel mit Node.js 18+\neine minimale node.js-version ist 16",
+        "ru": "совместим с Node.js 18+\nминимальная версия node.js 16",
+        "pt": "fazer compatível com Node.js 18+\numa versão node.js mínima é 16",
+        "nl": "maak het goed met Node\neen minimum node",
+        "fr": "rendre compatible avec Node.js 18+\nune version minimum node.js est 16",
+        "it": "rendere compatibile con Node.js 18+\nuna versione minima node.js è 16",
+        "es": "hacer compatible con Node.js 18+\nuna versión mínima node.js es 16",
+        "pl": "jest kompatybilny z Node.js 18+\nwersja minimalna jest 16",
+        "uk": "сумісний з Node.js 18+\na мінімум node.js версія 16",
+        "zh-cn": "与第18+js号相容\na 最低编号为16。"
+      },
+      "1.0.0": {
+        "en": "compatibility for js-controller 3",
+        "de": "Kompatibilität für js-controller 3",
+        "ru": "совместимость для js-controller 3",
+        "pt": "compatibilidade para js-controller 3",
+        "nl": "compatibiliteit voor js-controller 3",
+        "fr": "compatibilité pour js-controller 3",
+        "it": "compatibilità per js-controller 3",
+        "es": "compatibilidad para js-controller 3",
+        "pl": "kompatybilność z js-kontrolerem 3",
+        "zh-cn": "js-controller 3的兼容性",
+        "uk": "сумісність для js-контролера 3"
+      },
+      "0.0.33": {
+        "en": "Update utils.js and usage, CI Testing and deps (Apollon77)",
+        "de": "utils.js und Benutzung erneuert, CI Testing (Apollon77)",
+        "ru": "Обновите utils.js и использование, тестирование CI и deps (Apollon77)",
+        "pt": "Atualize utils.js e uso, teste de CI e deps (Apollon77)",
+        "nl": "Update utils.js en gebruik, CI-testen en deps (Apollon77)",
+        "fr": "Mise à jour utils.js et utilisation, CI Testing et deps (Apollon77)",
+        "it": "Aggiorna utils.js e utilizzo, test CI e deps (Apollon77)",
+        "es": "Actualice utils.js y uso, pruebas de CI y dependencias (Apollon77)",
+        "pl": "Zaktualizuj utils.js i wykorzystanie, CI Testing i deps (Apollon77)",
+        "uk": "Оновлення utils.js і використання, CI Testing і deps (Apollon77)",
+        "zh-cn": "更新 utils.js 和用法、CI 测试和 deps (Apollon77)"
+      },
+      "0.0.32": {
+        "en": "update basic package-file testing (Apollon77)",
+        "de": "Erweiterung der Tests (Apollon77)",
+        "ru": "обновить базовое тестирование файла пакета (Apollon77)",
+        "pt": "atualizar o teste básico de arquivo de pacote (Apollon77)",
+        "nl": "update basispakketbestand testen (Apollon77)",
+        "fr": "mise à jour des tests de base du fichier de package (Apollon77)",
+        "it": "aggiornare il test di base del file di pacchetto (Apollon77)",
+        "es": "actualizar las pruebas básicas de archivos de paquetes (Apollon77)",
+        "pl": "aktualizacja podstawowego testowania plików pakietów (Apollon77)",
+        "uk": "оновити тестування основного пакетного файлу (Apollon77)",
+        "zh-cn": "更新基本包文件测试（Apollon77）"
+      },
+      "0.0.31": {
+        "en": "node 0.12 removed from testing",
+        "de": "node 0.12 auf testing entfernt",
+        "ru": "узел 0.12 снят с тестирования",
+        "pt": "nó 0.12 removido do teste",
+        "nl": "node 0.12 verwijderd uit testen",
+        "fr": "nœud 0.12 supprimé des tests",
+        "it": "nodo 0.12 rimosso dal test",
+        "es": "nodo 0.12 eliminado de las pruebas",
+        "pl": "węzeł 0.12 usunięty z testowania",
+        "uk": "вузол 0.12 видалено з тестування",
+        "zh-cn": "从测试中删除节点 0.12"
+      },
+      "0.0.30": {
+        "en": "Enhance CI testing",
+        "de": "CI testing erweitert",
+        "ru": "Улучшить тестирование CI",
+        "pt": "Melhore o teste de CI",
+        "nl": "CI-testen verbeteren",
+        "fr": "Améliorez les tests CI",
+        "it": "Migliora i test CI",
+        "es": "Mejore las pruebas de IC",
+        "pl": "Ulepsz testowanie CI",
+        "uk": "Покращте тестування CI",
+        "zh-cn": "增强 CI 测试"
+      },
+      "0.0.29": {
+        "en": "changed adapter type to media",
+        "de": "Adapter type nach media geändert",
+        "ru": "изменен тип адаптера на медиа",
+        "pt": "mudou o tipo de adaptador para mídia",
+        "nl": "adaptertype gewijzigd in media",
+        "fr": "changé le type d'adaptateur en média",
+        "it": "modificato il tipo di adattatore in supporto",
+        "es": "cambió el tipo de adaptador a medios",
+        "pl": "zmieniono typ adaptera na media",
+        "uk": "змінений тип адаптера на носій",
+        "zh-cn": "将适配器类型更改为媒体"
+      }
+    },
+    "keywords": [
+      "firetv",
+      "fire tv",
+      "fire-tv",
+      "amazon fire tv"
+    ],
+    "mode": "daemon",
+    "icon": "firetv.png",
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/iobroker.firetv/master/admin/firetv.png",
+    "readme": "https://github.com/iobroker-community-adapters/iobroker.firetv/blob/master/README.md",
+    "loglevel": "info",
+    "type": "multimedia",
+    "enabled": true,
+    "messagebox": true,
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "soef",
+        "email": "soef@gmx.net"
+      }
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">= 3.0.0"
+      }
+    ],
+    "tier": 2,
+    "dataSource": "poll",
+    "connectionType": "local"
+  },
+  "native": {
+    "devices": []
+  },
+  "objects": []
 }
