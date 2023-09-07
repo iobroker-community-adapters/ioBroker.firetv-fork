@@ -3,6 +3,7 @@
 var soef = require(`${__dirname}/lib/dontBeSoSoef`),
     adb = require('adbkit'),
     path = require('path'),
+    os = require('os'),
     Mdns = require('mdns-discovery');
 
 let Client;
@@ -20,7 +21,7 @@ Client.prototype.shellEx = function(id, command, cb) {
         if (err || !stream) return cb & cb(err, 0);
         adb.util.readAll(stream, function (err, output) {
             if (err || !stream) return cb && cb(err);
-            var ar = output.toString().split('\r\n');
+            var ar = output.toString().split(os.EOL);
             ar.length--;
             for (var i=ar.length-1; i > ar.length-10; i++) {
                 adapter.log.debug(ar[i]);
@@ -107,6 +108,9 @@ var usedStateNames = {
     shell:              { n: 'shell',       val: '',    common: { desc: 'send an adb shell command'}},
     text:               { n: 'text',        val: '',    common: { desc: 'send "text" to the device'}},
     sendevent:          { n: 'sendevent',   val: '',    common: { } },
+    audioPlaying:       { n: 'audioPlaying',val: false, common: { write: false, min: false, max: true}}, 
+    updatePower:        { n: 'updatePower', val: false,    common: { write: true, read: false,  min: false, max: true, role:'button' } },
+    updateAudio:        { n: 'updateAudio', val: false,    common: { write: true, read: false, role:'button' } },
 
     //framebuffer:        { n: 'framebuffer', val: '',    common: { } },
 
@@ -205,6 +209,7 @@ function trackDevices() {
         if (ftv) {
             ftv.setOnline(val);
             ftv.updatePowerState();
+            ftv.updateAudioPlaying();
             ftv.updateState();
         }
     }
@@ -259,7 +264,6 @@ FireTV.prototype.startClient = function(cb) {
         // self.client.getPackages(id, function(err, packages) {
         //     if (err || !packages) return;
         // });
-
         self.client.version(function(err, version) {
             self.getAndroidVersion(function(androidVersion) {
                 self.getAPILevel(function (apiLevel) {
@@ -268,6 +272,7 @@ FireTV.prototype.startClient = function(cb) {
             });
         });
         self.updatePowerState();
+        self.updateAudioPlaying();
     });
     cb && cb();
 };
@@ -318,7 +323,7 @@ FireTV.prototype.handleCallback = function (err, stream, cb) {
     var self = this;
     adb.util.readAll(stream, function(err, output) {
         if (!err && output) {
-            var ar = output.toString().split('\r\n');
+            var ar = output.toString().split(os.EOL);
             ar.length--;
             // for (var i = Math.max(0, ar.length-10); i < ar.length; i++) {
             //     var line = ar[i];
@@ -326,7 +331,7 @@ FireTV.prototype.handleCallback = function (err, stream, cb) {
             //     self.dev.setImmediately('result', line);
             // }
             if (ar.length < 10) ar.forEach(function (line) {
-                adapter.log.debug(line);
+                //adapter.log.debug(line);
                 self.dev.setImmediately('result', line);
             });
         }
@@ -353,7 +358,7 @@ FireTV.prototype.shell = function (command, cb) {
 function lines2Object(lines) {
     var o = {};
     if (!lines) return o;
-    if (typeof lines === 'string') lines = lines.split('\r\n');
+    if (typeof lines === 'string') lines = lines.split(os.EOL);
     lines.forEach(function(line) {
         line = line.trim().replace(/ |:/g, '_');
         var ar = line.split('=');
@@ -371,28 +376,26 @@ FireTV.prototype.updatePowerState = function (cb) {
         cb && cb(on);
     }.bind(this));
 };
+FireTV.prototype.updateAudioPlaying = function (cb) {
+    this.getAudioPlayingState(function (playing) {
+        this.dev.setImmediately(usedStateNames.audioPlaying.n, playing);
+        cb && cb(playing);
+    }.bind(this));
+};
 FireTV.prototype.updateState = function (state) {
     this.dev.setImmediately(usedStateNames.state.n, state);
 };
 
 
 FireTV.prototype.getPowerState = function (cb) {
-    this.shell('dumpsys power', function (ar) {
-        // var value = ar.join('\r');
-        // var RE_KEYVAL = /^\s*(\S*)=(\S)\r?$/gm;
-        // var properties = {};
-        // var match;
-        // value = value.substr(52);
-        // while (match = RE_KEYVAL.exec(value)) {
-        //     properties[match[1]] = match[2];
-        // }
+    this.shell1(`dumpsys power | grep  -E \'Display Power: state=ON\' | wc -l`, function (ar) {
+        cb && cb(ar > 0);
+    });
+};
 
-        var power = lines2Object(ar);
-        var on = power.Display_Power__state;
-        //var i = power.mScreenOn;
-        // power.mSystemReady
-        // power.mDisplayReady;
-        cb && cb(on === 'ON');
+FireTV.prototype.getAudioPlayingState = function (cb) {
+   this.shell1(`dumpsys audio | grep -E \'\\\-\\\- state:started\' | wc -l`, function (ar) {
+        cb && cb(ar > 0);
     });
 };
 
@@ -534,6 +537,16 @@ FireTV.prototype.onStateChange = function (channel, state, val) {
             this.getPowerState(function(on) {
                 if (val !== on) this.shell("input keyevent " + adb.Keycode.KEYCODE_POWER);
             }.bind(this));
+            break;
+        case usedStateNames.updateAudio.n:
+            this.updateAudioPlaying();
+            this.dev.set(usedStateNames.updateAudio.n, true);
+            this.dev.set(usedStateNames.updateAudio.n, false);
+            break;
+        case usedStateNames.updatePower.n:
+	        this.updatePowerState();
+            this.dev.set(usedStateNames.updatePower.n, true);
+            this.dev.set(usedStateNames.updatePower.n, false);
             break;
     }
 };
