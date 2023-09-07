@@ -35,7 +35,7 @@ Alternatively, you can use *adbLink*
     ### **WORK IN PROGRESS** 
 -->
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.0.1 (2023-09-07)
 * (Grothesk242) make compatible with Node.js 18+
 * (bluefox) a minimum node.js version is 16
 

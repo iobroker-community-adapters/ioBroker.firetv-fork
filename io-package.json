@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "firetv",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "title": "Fire TV",
     "titleLang": {
       "en": "Fire TV",
@@ -31,6 +31,19 @@
     },
     "platform": "Javascript/Node.js",
     "news": {
+      "2.0.1": {
+        "en": "make compatible with Node.js 18+\na minimum node.js version is 16",
+        "de": "kompatibel mit Node.js 18+\neine minimale node.js-version ist 16",
+        "ru": "совместим с Node.js 18+\nминимальная версия node.js 16",
+        "pt": "fazer compatível com Node.js 18+\numa versão node.js mínima é 16",
+        "nl": "maak het goed met Node\neen minimum node",
+        "fr": "rendre compatible avec Node.js 18+\nune version minimum node.js est 16",
+        "it": "rendere compatibile con Node.js 18+\nuna versione minima node.js è 16",
+        "es": "hacer compatible con Node.js 18+\nuna versión mínima node.js es 16",
+        "pl": "jest kompatybilny z Node.js 18+\nwersja minimalna jest 16",
+        "uk": "сумісний з Node.js 18+\na мінімум node.js версія 16",
+        "zh-cn": "与第18+js号相容\na 最低编号为16。"
+      },
       "1.0.0": {
         "en": "compatibility for js-controller 3",
         "de": "Kompatibilität für js-controller 3",
