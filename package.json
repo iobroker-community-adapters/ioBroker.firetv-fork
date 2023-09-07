@@ -7,7 +7,7 @@
     "email": "soef@gmx.net"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=16.0.0"
   },
   "contributors": [
     {
@@ -32,7 +32,7 @@
     "bluebird": "^3.7.2",
     "mdns-discovery": "^0.2.6",
     "path": "^0.12.7",
-    "@iobroker/adapter-core": "^2.6.8",
+    "@iobroker/adapter-core": "^3.0.3",
     "sprintf-js": "^1.1.2",
     "array-ext": "^0.1.5"
   },
@@ -45,10 +45,21 @@
     "chai": "^4.3.8"
   },
   "main": "firetv.js",
+  "files": [
+    "admin/",
+    "lib/",
+    "io-package.json",
+    "firetv.js",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --exit",
     "translate": "translate-adapter",
-    "release": "release-script"
+    "release": "release-script",
+    "release-patch": "release-script patch --yes --no-update-lockfile",
+    "release-minor": "release-script minor --yes --no-update-lockfile",
+    "release-major": "release-script major --yes --no-update-lockfile",
+    "update-packages": "ncu --upgrade && cd src && ncu --upgrade && cd .."
   },
   "bugs": {
     "url": "https://github.com/iobroker-community-adapters/iobroker.firetv/issues"
