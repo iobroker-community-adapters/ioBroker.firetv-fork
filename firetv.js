@@ -744,13 +744,3 @@ function main() {
     adapter.subscribeStates('*');
     // adapter.subscribeObjects('*');
 }
-
-// If started as allInOne mode => return function to create instance
-// @ts-ignore
-if (module.parent) {
-    module.exports = startAdapter;
-} else {
-    // or start the instance directly
-    startAdapter();
-}
-
