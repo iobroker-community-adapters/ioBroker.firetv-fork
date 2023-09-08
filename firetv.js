@@ -356,8 +356,8 @@ FireTV.prototype.handleCallback = function (err, stream, cb) {
                 //adapter.log.debug(line);
                 self.dev.setImmediately('result', line);
             });
+            if (cb) cb(ar);
         }
-        if (cb) cb(ar);
     });
 };
 
