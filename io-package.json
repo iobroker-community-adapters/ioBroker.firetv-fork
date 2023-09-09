@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "firetv",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "title": "Fire TV",
     "titleLang": {
       "en": "Fire TV",
@@ -31,6 +31,19 @@
     },
     "platform": "Javascript/Node.js",
     "news": {
+      "2.0.2": {
+        "en": "A crash has been fixed (#56)",
+        "de": "Ein Absturz wurde behoben (#56)",
+        "ru": "Сбой был исправлен #(56)",
+        "pt": "Um acidente foi corrigido #(56)",
+        "nl": "Een crash is gemaakt",
+        "fr": "Un crash a été corrigé #(56)",
+        "it": "Un crash è stato fissato #(56)",
+        "es": "Un accidente ha sido fijo #(56)",
+        "pl": "Zmieniono numer #(56)",
+        "uk": "Виправлено помилку #(56)",
+        "zh-cn": "(56) 固定事故"
+      },
       "2.0.1": {
         "en": "make compatible with Node.js 18+\na minimum node.js version is 16",
         "de": "kompatibel mit Node.js 18+\neine minimale node.js-version ist 16",
@@ -108,19 +121,6 @@
         "pl": "Ulepsz testowanie CI",
         "uk": "Покращте тестування CI",
         "zh-cn": "增强 CI 测试"
-      },
-      "0.0.29": {
-        "en": "changed adapter type to media",
-        "de": "Adapter type nach media geändert",
-        "ru": "изменен тип адаптера на медиа",
-        "pt": "mudou o tipo de adaptador para mídia",
-        "nl": "adaptertype gewijzigd in media",
-        "fr": "changé le type d'adaptateur en média",
-        "it": "modificato il tipo di adattatore in supporto",
-        "es": "cambió el tipo de adaptador a medios",
-        "pl": "zmieniono typ adaptera na media",
-        "uk": "змінений тип адаптера на носій",
-        "zh-cn": "将适配器类型更改为媒体"
       }
     },
     "keywords": [

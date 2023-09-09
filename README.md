@@ -35,7 +35,7 @@ Alternatively, you can use *adbLink*
     ### **WORK IN PROGRESS** 
 -->
 ## Changelog
-### **WORK IN PROGRESS** 
+### 2.0.2 (2023-09-09) 
 * (jonaskn) A crash has been fixed (#56)
 
 ### 2.0.1 (2023-09-07)
