@@ -12,7 +12,7 @@
       "email": "soef@gmx.net"
     }
   ],
-  "homepage": "https://github.com/iobroker-community-adapters/iobroker.firetv",
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.firetv",
   "license": "MIT",
   "keywords": [
     "fire-tv",
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iobroker-community-adapters/iobroker.firetv.git"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.firetv.git"
   },
   "engines": {
     "node": ">=16.0.0"
