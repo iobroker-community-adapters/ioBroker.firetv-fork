@@ -28,7 +28,7 @@
     "node": ">=16.0.0"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.0.3",
+    "@iobroker/adapter-core": "^3.0.4",
     "adbkit": "^2.11.1",
     "array-ext": "^0.1.5",
     "bluebird": "^3.7.2",
